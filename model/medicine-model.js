@@ -5,19 +5,22 @@ const MedicineSchema = new mongoose.Schema({
         type: String
     },
     basePrice: {
+        type: Number
+    },
+    content: {
         type: String
     },
-    category: {
+    categoryId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "categories"
+        ref: "category"
     },
-    subcategory: {
+    subcategoryId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "subcategories"
+        ref: "subcategory"
     },
-    brand: {
+    brandId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "brands"
+        ref: "brand"
     }
 })
 

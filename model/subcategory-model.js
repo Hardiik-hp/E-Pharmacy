@@ -6,9 +6,9 @@ let SubcategorySchema = new mongoose.Schema({
     subcategoryName: {
         type: String
     },
-    category: {
+    categoryId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "categories"
+        ref: "category"
     },
     isActive: {
         type: Boolean

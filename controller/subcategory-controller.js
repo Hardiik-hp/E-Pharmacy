@@ -1,15 +1,15 @@
 const SubcategoryModel = require("../model/subcategory-model")
-const CategoryModel = require("../model/category-model")
+//const CategoryModel = require("../model/category-model")
 
 //add
 module.exports.addSubcategory = function (req, res) {
 
     let subcategoryName = req.body.subcategoryName
-    let category = req.body.category
+    let categoryId = req.body.categoryId
 
     let subcategory = new SubcategoryModel({
         subcategoryName: subcategoryName,
-        category: category
+        categoryId: categoryId
     })
     subcategory.save(function (err, data) {
         if (err) {
@@ -22,11 +22,11 @@ module.exports.addSubcategory = function (req, res) {
 
 //list
 module.exports.getAllSubcategories = function (req, res) {
-    SubcategoryModel.find().populate("category").exec(function (err, data) {
+    SubcategoryModel.find().populate("categoryId").exec(function (err, data) {
         if (err) {
-            res.json({ msg: "Something Wrong!!!", data: err, status: -1 })
+            res.json({ msg: "Something went wrong!!!", data: err, status: -1 })
         } else {
-            res.json({ msg: "Subcategories ...", data: data, status: 200 })
+            res.json({ msg: "subcategories ...", data: data, status: 200 })
         }
     })
 }

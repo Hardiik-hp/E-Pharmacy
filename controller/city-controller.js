@@ -1,15 +1,15 @@
 const CityModel = require("../model/city-model")
-const StateModel = require("../model/state-model")
+//const StateModel = require("../model/state-model")
 
 //add
 module.exports.addCity = function(req,res){
 
     let cityName = req.body.cityName
-    let state = req.body.state
+    let stateId = req.body.stateId
 
     let city = new CityModel({
         cityName: cityName,
-        state: state
+        stateId: stateId
     })
     city.save(function (err,data){
         if (err) {
@@ -23,7 +23,7 @@ module.exports.addCity = function(req,res){
 //List
 module.exports.getAllCities = function(req,res){
 
-    CityModel.find().populate("state").exec(function (err, data){
+    CityModel.find().populate("stateId").exec(function (err, data){
         if (err) {
             res.json({msg:"Something Wrong", data: err, status:-1})
         }else {

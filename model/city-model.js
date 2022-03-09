@@ -6,9 +6,9 @@ let CitySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    state: {
+    stateId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "states"
+        ref: "state"
     }
 })
 
