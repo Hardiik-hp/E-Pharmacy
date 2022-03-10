@@ -5,18 +5,18 @@ const PatientAddressSchema = new mongoose.Schema({
 
     patient: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "patients"
+        ref: "patient"
     },
     address: {
         type: String,
     },
     state: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "states"
+        ref: "state"
     },
     city: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "cities"
+        ref: "city"
     },
     pincode: {
         type: String,

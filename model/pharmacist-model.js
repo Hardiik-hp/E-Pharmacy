@@ -9,11 +9,11 @@ const PharmacistSchema = new mongoose.Schema({
     },
     state: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "states"
+        ref: "state"
     },
     city: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "cities"
+        ref: "city"
     },
     /*patient: {
         types: mongoose.Schema.Types.ObjectId,
@@ -33,7 +33,7 @@ const PharmacistSchema = new mongoose.Schema({
     },
     role: {
         types: mongoose.Schema.Types.ObjectId,
-        ref: "roles"
+        ref: "role"
     }
 })
 

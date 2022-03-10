@@ -14,6 +14,8 @@ const cityController = require("./controller/city-controller")
 const brandController = require("./controller/brand-controller")
 //const pharmacistController = require("./controller/pharmacist-controller")
 const medicineController = require("./controller/medicine-controller")
+const statusController = require("./controller/status-controller")
+const pharmacist_productController = require("./controller/pharmacist_product-controller")
 
 
 const app = express()
@@ -112,6 +114,18 @@ app.post("/medicines",medicineController.addMedicines)
 app.get("/medicines",medicineController.getAllMedicines)
 app.delete("/medicines/:medicineId",medicineController.deleteMedicines)
 app.put("/medicines",medicineController.updateMedicines)
+
+//Status
+app.post("/statuses",statusController.addStatus)
+app.get("/statuses",statusController.getAllStatuses)
+app.delete("/statuses/:statusId",statusController.deleteStatus)
+app.put("/statuses",statusController.updateStatus)
+
+//Pharmacist Product
+app.post("/pharmacistproducts",pharmacist_productController.addpharmacistProducts)
+app.get("/pharmacistproducts",pharmacist_productController.getAllpharmacistProducts)
+app.delete("/pharmacistproducts/:pharmacistProductId",pharmacist_productController.deletepharmacistProduct)
+app.put("/pharmacistproducts",pharmacist_productController.updatepharmacistProduct)
 
 //Server
 app.listen(port, () => {
